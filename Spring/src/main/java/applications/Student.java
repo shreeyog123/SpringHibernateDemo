@@ -19,6 +19,17 @@ public class Student {
 	private String password;
 	private long mobNumber;
 	private Date dob;
+	
+	public Student() {
+		
+	}
+	
+	
+	public Student(int rollNo, String username) {
+		super();
+		this.rollNo = rollNo;
+		this.username = username;
+	}
 	/*private List<String> hobby;*/
 	
 	/*private Address address;

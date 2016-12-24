@@ -1,14 +1,17 @@
 package applications;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+@RestController
 public class Test {
 
 /*	@RequestMapping("/login")
@@ -76,6 +79,17 @@ TestService testservice;
 		
 		ModelAndView model = new ModelAndView("success");
 		return model;
+	}
+	
+	@RequestMapping(value= "/getData.html")
+	public Student getDate(@RequestParam(value="rollNo", defaultValue="0") Integer id){
+		
+		System.out.println("get data");
+		List<String> list = testservice.getDataSerice();
+		System.out.println(list);
+		return new Student(id, list.get(id));
+		
+		
 	}
 	
 	
